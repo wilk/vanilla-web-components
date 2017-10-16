@@ -1,14 +1,14 @@
 {
-  "name": "app",
+  "name": "vanilla-webcomponents",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Vanilla Web Components experiment",
+  "main": "index.html",
   "scripts": {
     "prestart": "npm i",
     "start": "http-server -p 4300 -a 0.0.0.0"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Vincenzo (Wilk) Ferrari <wilk3ert@gmail.com>",
+  "license": "MIT",
   "devDependencies": {
     "http-server": "^0.10.0"
   }

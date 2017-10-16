@@ -1,5 +1,5 @@
 # vanilla-web-components
-Vanilla Web Components experiments
+Vanilla Web Components experiment
 
 # Running with docker-compose
 ```bash
