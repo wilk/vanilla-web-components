@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prestart": "npm i",
     "start": "http-server -p 4300 -a 0.0.0.0"
   },
   "author": "",
