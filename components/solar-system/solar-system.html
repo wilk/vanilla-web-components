@@ -1,0 +1,31 @@
+<link rel="import" href="../solar-planet/solar-planet.html">
+
+<style>
+  li {
+    margin-left: 50px;
+  }
+</style>
+
+<script>
+  class SolarSystemComponent extends HTMLElement {
+    constructor() {
+      super()
+
+      this.state = {
+        planets: [/*new SolarPlanetComponent({attributes: {planet: 'Earth'}}), */'<solar-planet name="Earth"></solar-planet>']
+      }
+      this.render()
+    }
+
+    render() {
+      const planetsList = this.state.planets.map(planet => `<li>${planet}</li>`)
+      this.innerHTML = `
+        <ul>
+          ${planetsList}
+        </ul>
+      `
+    }
+  }
+
+  window.customElements.define('solar-system', SolarSystemComponent)
+</script>

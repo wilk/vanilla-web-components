@@ -1,0 +1,12 @@
+version: "2"
+
+services:
+  frontend:
+    command: "npm start"
+    image: webcomponents:1
+    build:
+      context: .
+    ports:
+      - "4300:4300"
+    volumes:
+      - ./:/opt/app
