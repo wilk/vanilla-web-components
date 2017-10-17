@@ -1,10 +1,11 @@
 <style>
-  .hello-world__container {
-    color: red;
+  .solar-planet__container {
+    width: 10%;
+    height: 100%;
   }
 </style>
 
-<script>
+<script type="module">
   const AVAILABLE_ATTRIBUTES = ['name']
   class SolarPlanetComponent extends HTMLElement {
     constructor(cfg) {
@@ -20,18 +21,30 @@
           this.props[attr.name] = attr.value
         }
       }
+
       this.render()
+      console.log(`PLANET ${this.props.name} CREATED`)
+    }
+
+    connectedCallback() {
       console.log(`PLANET ${this.props.name} CONNECTED`)
     }
 
     disconnectedCallback() {
-      console.log('HELLO WORLD DISCONNECTED')
+      console.log(`PLANET ${this.props.name} DISCONNECTED`)
     }
 
     render() {
       this.innerHTML = `
-          <div class="hello-world__container">Hello from ${this.props.name}!</div>
-        `
+        <div class="solar-planet__container">
+          <div></div>
+          <div>
+            <span>${this.props.name}</span>
+          </div>
+        </div>
+      `
+
+      console.log(`PLANET ${this.props.name} RENDERED`)
     }
 
     static get observedAttributes() {

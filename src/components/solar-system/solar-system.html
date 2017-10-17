@@ -1,0 +1,41 @@
+<link rel="import" href="../solar-planet/solar-planet.html">
+
+<style>
+  li {
+    margin-left: 50px;
+  }
+</style>
+
+<script>
+  class SolarSystemComponent extends HTMLElement {
+    constructor() {
+      super()
+
+      this.state = {
+        planets: [
+          '<solar-planet name="Sun" distance="0" size="12000"></solar-planet>',
+          '<solar-planet name="Mercury" distance="0.4" size="0.147"></solar-planet>',
+          '<solar-planet name="Venus" distance="0.7" size="0.902"></solar-planet>',
+          '<solar-planet name="Earth" distance="1" size="1"></solar-planet>',
+          '<solar-planet name="Mars" distance="1.5" size="0.284"></solar-planet>',
+          '<solar-planet name="Jupiter" distance="5.2" size="121.9"></solar-planet>',
+          '<solar-planet name="Saturn" distance="9.5" size="83.703"></solar-planet>',
+          '<solar-planet name="Uranus" distance="19.2" size="15.91"></solar-planet>',
+          '<solar-planet name="Neptune" distance="30.2" size="14.91"></solar-planet>',
+          '<solar-planet name="Pluto" distance="39.5" size="0.035"></solar-planet>'
+        ]
+      }
+      this.render()
+    }
+
+    render() {
+      this.innerHTML = `
+        <div>
+          ${this.state.planets.join('')}
+        </div>
+      `
+    }
+  }
+
+  window.customElements.define('solar-system', SolarSystemComponent)
+</script>
